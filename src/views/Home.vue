@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
+  <div id="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your App" />
+    <h1> Laravel + Vue.js </h1>
+    <h3> Benvenuto nel mio progetto Laravel interfacciato con Vue.js tramite API.</h3>
   </div>
 </template>
 
@@ -12,3 +13,9 @@ export default {
 };
 
 </script>
+
+<style lang="scss">
+    #home {
+
+    }
+</style>

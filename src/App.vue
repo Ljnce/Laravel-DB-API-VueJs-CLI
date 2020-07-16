@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navigation />
-    <!-- Faccio passare la chiamata axios API tramite il props, agli altri file.vue -->
+    <!-- Faccio passare la chiamata axios API tramite il props, agli altri file -->
     <router-view :players="players"/>
     <Footer />
   </div>
