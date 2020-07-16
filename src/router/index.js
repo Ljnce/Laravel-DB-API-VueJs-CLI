@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Laravel from "../views/Laravel.vue";
+import View from "../views/View.vue";
+import Edit from "../views/Edit.vue";
 
 Vue.use(VueRouter);
 
@@ -16,6 +18,24 @@ const routes = [
     name: "Laravel",
     component: Laravel
   },
+  {
+    path: "/view/:id",
+    name: "View",
+    component: View
+  },
+  {
+    path: "/edit/:id",
+    name: "Edit",
+    component: Edit
+  },
+  // {
+    // path: "/laravel",
+    // name: "Laravel",
+    // component: Laravel,
+    // // children: [
+    // //      { path: 'id', component: Id }
+    // //   ]
+    // // }
   {
     path: "/about",
     name: "About",

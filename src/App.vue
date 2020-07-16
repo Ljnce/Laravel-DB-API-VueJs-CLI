@@ -17,7 +17,7 @@ export default {
     name: 'app',
     data () {
         return {
-            players: null,
+            players: null
         }
     },
     // Richiamo API da mostrare a schermo sul file Laravel.Vue

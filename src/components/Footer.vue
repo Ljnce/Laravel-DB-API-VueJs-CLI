@@ -1,6 +1,6 @@
 <template lang="html">
     <div id="footer">
-
+        <h1>FOOTER IN PROGRESS</h1>
     </div>
 
 </template>
