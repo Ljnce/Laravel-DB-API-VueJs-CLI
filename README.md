@@ -1,4 +1,4 @@
-# laravelvue
+# Laravel DB API + Vue.js CLI
 
 <p> La creazione di questo piccolo progetto, è stata suddivisa in 3 fasi:</p>
       <h3 style="color:red"> Fasi 1 </h3>
