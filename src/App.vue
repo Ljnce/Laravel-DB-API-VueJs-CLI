@@ -1,12 +1,47 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <Navigation />
+    <!-- Faccio passare la chiamata axios API tramite il props, agli altri file.vue -->
+    <router-view :players="players"/>
+    <Footer />
   </div>
 </template>
+
+<script>
+
+import axios from 'axios';
+import Navigation from '@/components/Navigation.vue'
+import Footer from '@/components/Footer.vue'
+
+export default {
+    name: 'app',
+    data () {
+        return {
+            players: null,
+        }
+    },
+    // Richiamo API da mostrare a schermo sul file Laravel.Vue
+    mounted () {
+        axios
+        .get('http://127.0.0.1:8000/api/players', {
+            headers: {
+            'Authorization': 'Bearer '+ '',
+            "Content-Type": "application/json",
+            }
+        })
+        .then(response => {
+            this.players = response.data
+            console.log(response.data);
+        })
+    },
+    // Importo i componenti che mi serve da stampare in tutte le pagine
+    components: {
+        Navigation,
+        Footer
+    }
+}
+
+</script>
 
 <style lang="scss">
 #app {
