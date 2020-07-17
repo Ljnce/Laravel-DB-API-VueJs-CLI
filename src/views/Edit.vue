@@ -1,14 +1,17 @@
 <template lang="html">
-  <div id="view">
-      <div class="for">
-          <h1>{{old.role}}</h1>
-          <small>{{old.surname}}</small>
+  <div id="edit">
+      <div class="container-edit">
+          <h1> Modifica utente </h1>
           <form>
-              <strong>Role:</strong>
-              <input type="text" class="form-control-sm" v-model="currentrole">
-              <strong>Surname:</strong>
-              <input type="text" class="form-control-sm" v-model="currentsurname">
-              <button type="submit" @click="update()">Update</button>
+                <div class="role">
+                    <strong>Role:</strong>
+                    <input type="text" class="form-control" v-model="currentrole">
+                </div>
+                <div class="surname">
+                    <strong>Surname:</strong>
+                    <input type="text" class="form-control" v-model="currentsurname">
+                </div>
+                <button type="submit" @click="update()">Update</button>
           </form>
           <!-- <pre>
                <small>{{outputEdit}}</small>
@@ -26,6 +29,9 @@ export default {
             old: '',
             outputEdit: ''
         }
+    },
+    created () {
+        this.update();
     },
     methods: {
         // Passo l'id all'API da mostrarmi, tramite la rotta url a cui ho dato l'id relativo, come parametro.
@@ -59,8 +65,19 @@ export default {
 
 <style lang="scss">
 
-#view {
-
+#edit {
+    .container-edit {
+        height: 400px;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .role,
+        .surname{
+            margin-bottom: 20px;
+        }
+    }
 }
 
 </style>

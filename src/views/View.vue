@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="view">
-      <div class="for">
+      <div class="details">
           <h1>{{single.role}}</h1>
           <small>{{single.surname}}</small>
       </div>
@@ -42,8 +42,20 @@ export default {
 
 <style lang="scss">
 
-#view {
+@mixin centerPosition ($display:flex, $align:center, $justy:center) {
+    display:$display ;
+    align-items: $align;
+    justify-content: $justy
+}
 
+#view {
+    height: 500px;
+    width: 100vw;
+    .details {
+        height: 500px;
+        @include centerPosition();
+        flex-direction: column;
+    }
 }
 
 </style>

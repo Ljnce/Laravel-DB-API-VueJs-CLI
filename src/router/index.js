@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Laravel from "../views/Laravel.vue";
 import View from "../views/View.vue";
 import Edit from "../views/Edit.vue";
+import Create from "../views/Create.vue";
 
 Vue.use(VueRouter);
 
@@ -12,6 +13,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/create",
+    name: "Create",
+    component: Create
   },
   {
     path: "/laravel",

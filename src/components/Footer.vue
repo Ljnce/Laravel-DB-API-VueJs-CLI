@@ -1,6 +1,8 @@
 <template lang="html">
     <div id="footer">
-        <h1>FOOTER IN PROGRESS</h1>
+        <div class="min-footer">
+            <h1>FOOTER IN PROGRESS</h1>
+        </div>
     </div>
 
 </template>
@@ -14,10 +16,22 @@ export default {
 
 <style lang="scss">
 
+@mixin centerPosition ($display:flex, $align:center, $justy:center) {
+    display:$display ;
+    align-items: $align;
+    justify-content: $justy
+}
+
 #footer {
-    height: 100px;
+    height: 120px;
     width: 100vw;
-    border-top: 1px solid black;
+    @include centerPosition();
+    .min-footer {
+        height: 120px;
+        width: 80%;
+        @include centerPosition();
+        border: 1px solid black;
+    }
 }
 
 </style>
