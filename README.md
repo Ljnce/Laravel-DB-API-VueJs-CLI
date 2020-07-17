@@ -1,5 +1,11 @@
 # Laravel DB API + Vue.js CLI
 
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="350"></p>
+
+<h1 align="center"> + </h1>
+
+<p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1024px-Vue.js_Logo_2.svg.png" width="200"></p>
+
 <p> La creazione di questo piccolo progetto, è stata suddivisa in 3 fasi:</p>
       <h3 style="color:red"> Fasi 1 </h3>
       <ul>
