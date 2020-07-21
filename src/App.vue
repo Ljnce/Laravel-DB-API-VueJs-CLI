@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navigation />
+    <Logout />
     <!-- Faccio passare la chiamata axios API tramite il props, agli altri file -->
     <router-view :players="players"/>
     <Footer />
@@ -10,8 +11,9 @@
 <script>
 
 import axios from 'axios';
-import Navigation from '@/components/Navigation.vue'
-import Footer from '@/components/Footer.vue'
+import Navigation from '@/components/Navigation.vue';
+import Footer from '@/components/Footer.vue';
+import Logout from '@/components/Logout.vue';
 
 export default {
     name: 'app',
@@ -37,7 +39,8 @@ export default {
     // Importo i componenti che mi serve da stampare in tutte le pagine
     components: {
         Navigation,
-        Footer
+        Footer,
+        Logout
     }
 }
 

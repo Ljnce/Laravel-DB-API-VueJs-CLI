@@ -38,7 +38,7 @@
 }
 
 #about {
-    height: 500px;
+    height: 800px;
     @include centerPosition();
     .min-about {
         width: 80%;

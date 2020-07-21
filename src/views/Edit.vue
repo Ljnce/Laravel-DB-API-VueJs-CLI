@@ -1,17 +1,17 @@
 <template lang="html">
   <div id="edit">
       <div class="container-edit">
-          <h1> Modifica utente </h1>
+          <h1> Edit character </h1>
           <form>
                 <div class="role">
-                    <strong>Role:</strong>
+                    <strong>Character:</strong>
                     <input type="text" class="form-control" v-model="currentrole">
                 </div>
                 <div class="surname">
-                    <strong>Surname:</strong>
+                    <strong>Name:</strong>
                     <input type="text" class="form-control" v-model="currentsurname">
                 </div>
-                <button type="submit" @click="update()">Update</button>
+                <button type="submit" class="btn btn-outline-info" @click="update()">Update</button>
           </form>
           <!-- <pre>
                <small>{{outputEdit}}</small>

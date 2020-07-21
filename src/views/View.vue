@@ -24,7 +24,7 @@ export default {
     axios
     .get('http://127.0.0.1:8000/api/players/' + id, {
         headers: {
-        'Authorization': 'Bearer '+ '',
+        'Authorization': 'Bearer '+ 'P',
         "Content-Type": "application/json",
         }
     })
@@ -35,7 +35,7 @@ export default {
     .catch(function (error) {
      console.log(error);
      });
- }
+ },
 }
 
 </script>

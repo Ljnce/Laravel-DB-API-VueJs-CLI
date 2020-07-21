@@ -1,11 +1,11 @@
 <template>
   <div id="home">
     <div class="home-img">
-        <img alt="Vue logo" src="../assets/logo.png" />
-        <img alt="Vue logo" src="../assets/Laravel.svg" style="height:150px"/>
+        <img alt="Vue logo" src="../assets/logo.png" style="height:120px" />
+        <img alt="Vue logo" src="../assets/Laravel.svg" style="height:120px"/>
     </div>
     <div class="home-description">
-        <h3> Benvenuto nel mio progetto Laravel interfacciato con Vue.js tramite API.</h3>
+        <h3> Welcome to my Laravel + Vue.js CLI project.</h3>
     </div>
   </div>
 </template>
@@ -34,6 +34,8 @@ export default {
         height: 250px;
         width: 80%;
         @include centerPosition();
+        flex-direction: column;
+        margin-top: 20px;
     }
     .home-description {
         height: 250px;

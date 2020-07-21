@@ -2,8 +2,9 @@
     <div id="navigation">
       <router-link class="link" to="/">Home</router-link>  |
       <router-link class="link" to="/about">About</router-link> |
-      <router-link class="link" to="/laravel">Laravel</router-link> |
-      <router-link class="link" to="/create">Crea</router-link>
+      <router-link class="link" to="/laravel">Characters</router-link> |
+      <router-link class="link" to="/create">Create</router-link> |
+      <router-link class="link" to="/login">Login</router-link>
     </div>
 </template>
 

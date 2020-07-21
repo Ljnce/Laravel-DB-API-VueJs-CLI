@@ -1,5 +1,8 @@
 <template>
    <div id="laravel">
+       <div class="hidden" v-if="!isLogged">
+           <h4><router-link to="/login">Login</router-link> to access your panel</h4>
+       </div>
        <!-- <div class="container-newdata">
            <h1>Inserisci un nuovo utente:</h1>
             <form @submit="formSubmit" v-on:keyup.enter="formSubmit">
@@ -18,22 +21,24 @@
             </pre>
        </div> -->
            <!-- <h1>{{player.role}}</h1> -->
-        <table>
+        <table v-if="isLogged">
             <thead>
                 <tr>
-                    <th> Alias </th>
+                    <th> Name </th>
                     <th colspan="3"> Action </th>
                 </tr>
             </thead>
             <!-- <div class="container-stamp" v-for="player in players" :key="player.id"> -->
                 <tbody v-for="player in players" :key="player.id">
+                    <!-- <transition name="fade" v-if="show"> -->
                     <tr>
-                        <td><h2>{{player.surname}}</h2></td>
-                        <td><router-link :to="{name:'View', params:{id:player.id}}" tag="button" class="btn btn-outline-info" style="margin-bottom:20px"> Visualizza {{player.surname}}</router-link></td>
-                        <td><router-link :to="{name:'Edit', params:{id:player.id}}" tag="button" class="btn btn-outline-warning" style="margin-bottom:20px">Modifica {{player.surname}}</router-link></td>
+                        <td><h1>{{player.surname}}</h1></td>
+                        <td><router-link :to="{name:'View', params:{id:player.id}}" tag="button" class="btn btn-outline-dark" style="margin-bottom:20px"> Show </router-link></td>
+                        <td><router-link :to="{name:'Edit', params:{id:player.id}}" tag="button" class="btn btn-outline-info" style="margin-bottom:20px"> Edit </router-link></td>
                         <td> <button type="button" class="btn btn-outline-danger"
-                        @click="deleteAddress(player.id)">Delete</button></td>
+                        @click="deleteAddress(player.id)"> Delete </button></td>
                     </tr>
+                    <!-- </transition> -->
                 </tbody>
             <!-- </div> -->
        </table>
@@ -55,18 +60,26 @@
 
 <script>
 
+import { mapGetters } from 'vuex';
+
 export default {
    name: "Laravel",
    // Mi ritorno le proprietà della chiamata AXIOS fatta sul file App.vue
    props:['players'],
    data() {
       return {
+          // show: true
            // role: '',
            // surname: '',
            // currentrole: '',
            // currentsurname: '',
            // outputSend: ''
        }
+   },
+   computed: {
+     ...mapGetters([
+       'isLogged'
+     ])
    },
    methods: {
    // formSubmit(e) {
@@ -107,7 +120,10 @@ export default {
            console.log(error);
            // this.outputDelete = error;
            });
-       },
+       }
+       // clickShow () {
+       //     return this.show = !this.show;
+       // },
       // update(id){
       //    var formData = {
       //      role: this.currentrole,
@@ -142,6 +158,31 @@ export default {
 #laravel {
     height: 500px;
     @include centerPosition();
+    table {
+        // .fade-leave-active {
+        //     transition: all 3s;
+        // }
+        // .fade-leave-to {
+        //     opacity:0;
+        // }
+        thead {
+            tr {
+                th {
+                    padding-bottom: 40px;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    h1,
+                    button {
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 </style>
